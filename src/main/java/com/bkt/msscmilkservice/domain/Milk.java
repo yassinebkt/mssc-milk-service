@@ -29,7 +29,7 @@ public class Milk {
 
     @CreationTimestamp
     @Column(updatable = false)
-    private Timestamp creationDate;
+    private Timestamp createdDate;
 
     @UpdateTimestamp
     private Timestamp lastModifiedDate;
