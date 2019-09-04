@@ -32,7 +32,7 @@ public class MilkDto {
     private String milkName;
 
     @NonNull
-    private MilkStyleEnum millStyle;
+    private MilkStyleEnum milkStyle;
 
     @Positive
     @NotNull
@@ -41,5 +41,6 @@ public class MilkDto {
     @Positive
     @NotNull
     private BigDecimal price;
+
     private Integer quantityOnHand;
 }
