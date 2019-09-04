@@ -4,6 +4,7 @@ package com.bkt.msscmilkservice.web.controller;
 import com.bkt.msscmilkservice.web.model.MilkDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -19,13 +20,13 @@ public class MilkController {
     }
 
     @PostMapping()
-    public ResponseEntity saveNewMilk(@RequestBody MilkDto milkDto){
+    public ResponseEntity saveNewMilk(@RequestBody @Validated MilkDto milkDto){
 
         return new ResponseEntity(MilkDto.builder().build(), HttpStatus.CREATED);
     }
 
     @PutMapping({"/{milkId}"})
-    public ResponseEntity updateMilkById(@PathVariable("milkId") UUID milkId, @RequestBody MilkDto milkDto ){
+    public ResponseEntity updateMilkById(@PathVariable("milkId") UUID milkId, @RequestBody @Validated MilkDto milkDto ){
 
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
